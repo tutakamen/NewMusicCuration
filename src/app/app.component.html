@@ -1,0 +1,98 @@
+<div class="navbar-container">
+
+    <!-- Top navbar -->
+    <mat-toolbar class="navbar" color="primary" >
+  
+      <button mat-icon-button  (click)="snav.toggle()" *ngIf="token" >
+        <mat-icon>menu</mat-icon>
+      </button>
+  
+      <a class="navbar-brand" matTooltip="Home">
+        <h1>
+          your_Music
+        </h1>
+      </a>
+  
+      <span class="navbar-spacer"></span>
+  
+      <button mat-button [matMenuTriggerFor]="userMenu"  *ngIf="token"  >
+        <mat-icon>person</mat-icon>
+        
+        <span fxShow fxHide.xs>
+          {{token.userName}}
+        </span>
+      </button>
+      <mat-menu #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+  
+        <a mat-menu-item (click)="logout()"   >
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Log out</span>
+        </a>
+  
+      </mat-menu>
+  
+    </mat-toolbar>
+  
+    <mat-sidenav-container>
+      <mat-sidenav  #snav [opened]="token && snav.opened"  [fixedInViewport]="true" fixedTopGap="56"> 
+        <!-- [mode]="side" 
+        The <mat-sidenav> can render in one of three different ways based on the mode property.
+        Mode	Description
+        over	Sidenav floats over the primary content, which is covered by a backdrop
+        push	Sidenav pushes the primary content out of its way, also covering it with a backdrop
+        side	Sidenav appears side-by-side with the main content, shrinking the main content's width to make space for the sidenav.
+        If no mode is specified, over is used by default.
+        -->
+        <mat-nav-list>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>Artist</mat-label>
+              <!-- <input matInput type="text"> -->
+              <!-- <a [routerLink]="['search']" [queryParams]="{ searchQuery: "xibit" }">
+            </a> -->
+            <form (ngSubmit)='handleSearch()'>
+              <input matInput type="text" name="searchString" [(ngModel)]='searchString'>
+            </form>
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+          </div>
+  
+  
+          <a mat-list-item  routerLink="/newReleases" routerLinkActive="active" >
+            <mat-icon mat-list-icon>
+              library_music
+            </mat-icon>
+            <p mat-line> New Releases </p>
+          </a>
+  
+          <a mat-list-item routerLink="/favourites" routerLinkActive="active">
+            <mat-icon mat-list-icon>
+              favoritei
+            </mat-icon>
+            <p mat-line> Favourites </p>
+          </a>
+  
+        <mat-divider></mat-divider>
+          <a id="push-bottom" mat-list-item  routerLink="/about" routerLinkActive="active" >
+            <mat-icon mat-list-icon>
+              info_outline
+            </mat-icon>
+            <p mat-line> About </p>
+          </a>
+        </mat-nav-list>
+  
+      </mat-sidenav>
+      
+      <mat-sidenav-content class="sidenav-content">
+        
+        <!-- Main content -->
+        <router-outlet></router-outlet>
+        <!-- ------------ -->
+        
+        <div class="bottom-spacer"></div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+  </div>
+
+

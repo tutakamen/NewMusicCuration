@@ -1,0 +1,14 @@
+
+body {
+    font-family: Calibri; 
+    margin: 0;
+    /* background-color: darkcyan; */
+  }
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #353b46;
+    color: rgb(255, 255, 255);
+  }
+  

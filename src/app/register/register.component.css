@@ -1,0 +1,9 @@
+mat-card {   max-width: 400px;   margin: 2em auto;   text-align: center; }  
+mat-form-field {   display: block; }  
+.success{   text-align: center;   padding-top:10px; } 
+
+input:focus.ng-valid{
+    outline:3px solid green ; 
+}input:focus.ng-invalid{
+    outline:3px solid red ; 
+}

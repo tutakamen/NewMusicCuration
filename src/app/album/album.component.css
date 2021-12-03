@@ -1,0 +1,18 @@
+header{
+    color: whitesmoke;
+}
+h2{
+    color: rgb(2, 2, 2);
+
+}
+mat-list mat-icon:hover{ cursor: pointer; }
+
+#header1{
+    color: whitesmoke;
+    position:relative;
+    margin: auto;
+    text-align:center ; 
+}
+
+
+
