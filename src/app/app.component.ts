@@ -5,7 +5,7 @@
  * * distributed to other students. 
  * * * Name: Mustafa Bukhari Student ID: 133998195  Date: 18 November 2021 
  * 
- * Angular App (Deployed) Link: _____________________________________________________
+ * Angular App (Deployed) Link: https://61aa263f4f68425e2b2e414c--gifted-johnson-97eac1.netlify.app/
  *
  * User API (Heroku) Link: https://pure-eyrie-80276.herokuapp.com/ 
  * ********************************************************************************/ 
